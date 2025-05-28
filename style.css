@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+.master {
+    background-color: white;
+    width: 600px;
+    height: 400px;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.menu {
+    width: 150px;
+    height: 100%;
+}
+
+.menu h1 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.blackLine {
+    height: 100%;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.blackLine div{
+    height: 100%;
+    width: 2px;
+    background-color: gray;
+}
