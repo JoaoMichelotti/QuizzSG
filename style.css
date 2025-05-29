@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 .main {
@@ -36,11 +39,52 @@
 .menu {
     width: 150px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+    gap: 20px;
 }
 
 .menu h1 {
     font-size: 25px;
     text-align: center;
+}
+
+.menu input {
+
+    padding: 7px;
+    border-radius: 8px;
+    border: none;
+    border: 1px solid gray;
+    font-size: 16px;
+}
+
+.buttons {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.buttons button {
+    padding: 7px;
+    border-radius: 8px;
+    border: none;
+    border: 1px solid #e6151e;
+    background-color: #e6151e;
+    color: #fff;
+    font-size: 16px;
+}
+
+.buttons button:hover {
+    background-color: #d41c2f;
+    color: white;
+    cursor: pointer;
+}
+
+.buttons button:active {
+    background-color: #e6151e;
 }
 
 .blackLine {
