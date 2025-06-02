@@ -22,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 600px;
 }
 
 .masterInt {
@@ -115,6 +116,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+
 }
 
 .hide {
@@ -145,4 +147,31 @@
 .Answers button:hover {
     background-color: #ccc8c8;
     cursor: pointer;
+}
+
+.bg_Green {
+    background-color: green;
+    color: white;
+    
+}
+
+button.bg_Green:hover {
+    background-color: green;
+    cursor: default;
+}
+
+.bg_Red {
+    background-color: red;
+    color: white;
+    
+}
+
+button.bg_Red:hover {
+    background-color: red;
+    cursor: default;
+}
+
+button.hoverless:hover {
+    background-color: #f0f0f0;
+    cursor: default;
 }
