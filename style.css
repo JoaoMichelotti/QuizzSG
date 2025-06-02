@@ -17,13 +17,19 @@
 
 .master {
     background-color: white;
-    width: 600px;
-    height: 400px;
     border-radius: 15px;
     padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.masterInt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 400px;
 }
 
 .logo {
@@ -98,4 +104,45 @@
     height: 100%;
     width: 2px;
     background-color: gray;
+}
+
+
+
+.Questions {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.Question h2 {
+    text-align: center;
+}
+
+.Answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 500px;
+}
+
+.Answers button {
+    padding: 8px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.Answers button:hover {
+    background-color: #ccc8c8;
+    cursor: pointer;
 }
