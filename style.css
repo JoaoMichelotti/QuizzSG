@@ -23,6 +23,8 @@
     justify-content: center;
     align-items: center;
     max-width: 600px;
+    min-width: 600px;
+    height: 450px;
 }
 
 .masterInt {
@@ -41,6 +43,10 @@
 
 .logo img {
     width: 150px;
+}
+
+.logo-img img{
+    width: 220px;
 }
 
 .menu {
@@ -116,6 +122,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    justify-content: center;
 
 }
 
@@ -172,6 +179,6 @@ button.bg_Red:hover {
 }
 
 button.hoverless:hover {
-    background-color: #f0f0f0;
+    background-color: #fafafa;
     cursor: default;
 }

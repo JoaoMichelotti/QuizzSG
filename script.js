@@ -62,10 +62,9 @@ document.getElementById("jogar").addEventListener("click", () => {
 
 function startQuizz() {
 
-    
 
     document.getElementById("pergunta").innerHTML = `
-        <h2> ${perguntas[0].pergunta} </h2>
+        <h2> ${perguntas[cont].pergunta} </h2>
     `
 
     let htmlFinal = ""
@@ -111,4 +110,7 @@ function checarResposta(alternativa) {
 
     errou = false
     cont++
+
+    setTimeout(startQuizz, 2000)
+
 }
