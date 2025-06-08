@@ -42,10 +42,12 @@ const perguntas = [
 ]
 
 let cont = 0 
+let acertos = 0
+let playerAleatorio = ""
+let jogador = ""
 
 document.getElementById("jogar").addEventListener("click", () => {
-    let playerAleatorio = ""
-    let jogador = ""
+   
     if (document.getElementById("nome").value == "")
          playerAleatorio = "Player" + Math.floor(Math.random() * 10000)
     else 
@@ -87,6 +89,7 @@ function checarResposta(alternativa) {
 
     if (perguntas[cont].alternativa_correta == alternativa) {
         document.getElementById(alternativa).classList.add("bg_Green")
+        acertos++
     }
     else {
         document.getElementById(alternativa).classList.add("bg_Red")
@@ -111,6 +114,39 @@ function checarResposta(alternativa) {
     errou = false
     cont++
 
-    setTimeout(startQuizz, 2000)
+    if (perguntas.length > cont) {
+        setTimeout(startQuizz, 2000)
+    }
+    else {
+        setTimeout(Finalizacao, 2000)
+    }
+}
+
+
+function Finalizacao() {
+
+    document.getElementById("menuQuestoes").classList.add("hide")
+
+    document.getElementById("Final").classList.remove("hide")
+
+    document.getElementById("qtdAcertos").innerText = acertos + " de 8"
+
+    setTimeout(Reset, 4000)
+
+}
+
+function Reset () {
+
+    document.getElementById("menuPrincipal").classList.remove("hide")
+
+    document.getElementById("Final").classList.add("hide")
+}
+
+function saveScore(name, score) {
+
+  let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+  ranking.push({ name, score });
+  ranking.sort((a, b) => b.score - a.score);
+  localStorage.setItem("ranking", JSON.stringify(ranking));
 
 }
