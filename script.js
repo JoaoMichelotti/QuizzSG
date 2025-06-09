@@ -59,7 +59,42 @@ document.getElementById("jogar").addEventListener("click", () => {
     // mostra menu de perguntas
     document.getElementById("menuQuestoes").classList.remove("hide")
 
+    document.getElementById("nome").value = ""
+
     startQuizz()
+})
+
+document.getElementById("btnRanking").addEventListener("click", () => {
+
+    document.getElementById("ranking").classList.remove("hide")
+
+    // esconde o menu principal
+    document.getElementById("menuPrincipal").classList.add("hide")
+
+    const container =  document.getElementById("corpoTabela")   
+
+    container.innerHTML = ""
+
+    let htmlFinal = "" 
+
+    let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+
+    ranking.forEach((item, index) => {
+
+        htmlFinal = `<td>
+            ${index + 1}   
+        </td>
+        <td>
+            ${item.nome}
+        </td>
+        <td>
+            ${item.pontos}
+        </td>
+        `
+
+        container.innerHTML += htmlFinal
+    })
+
 })
 
 function startQuizz() {
@@ -131,6 +166,8 @@ function Finalizacao() {
 
     document.getElementById("qtdAcertos").innerText = acertos + " de 8"
 
+    adicionarAoRanking(playerAleatorio != "" ? playerAleatorio : jogador, acertos)
+
     setTimeout(Reset, 4000)
 
 }
@@ -140,13 +177,34 @@ function Reset () {
     document.getElementById("menuPrincipal").classList.remove("hide")
 
     document.getElementById("Final").classList.add("hide")
+
+    cont = 0
+    acertos = 0
+    playerAleatorio = ""
+    jogador = ""
 }
 
-function saveScore(name, score) {
-
+function adicionarAoRanking(nome, pontos) {
+  // Pega o ranking atual do localStorage
   let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
-  ranking.push({ name, score });
-  ranking.sort((a, b) => b.score - a.score);
+
+  // Adiciona o novo jogador
+  ranking.push({ nome, pontos });
+
+  // Ordena do maior para o menor
+  ranking.sort((a, b) => b.pontos - a.pontos);
+
+  // Salva de volta no localStorage
   localStorage.setItem("ranking", JSON.stringify(ranking));
 
+  console.log(ranking)
 }
+
+document.getElementById("voltar").addEventListener("click", () => {
+
+    document.getElementById("ranking").classList.add("hide")
+
+    // esconde o menu principal
+    document.getElementById("menuPrincipal").classList.remove("hide")
+
+})

@@ -15,7 +15,7 @@
                     <input type="text" placeholder="Digite seu nome" id="nome">
                     <div class="buttons">
                         <button type="button" id="jogar">Jogar</button>
-                        <button type="button">Ranking</button>
+                        <button type="button" id="btnRanking">Ranking</button>
                     </div>
                 </div>
 
@@ -51,6 +51,28 @@
                 </div>
                 <h2>Você Acertou:</h2>
                 <h2 id="qtdAcertos"></h2>
+            </div>
+
+            <div id="ranking" class="ranking hide">
+                <div class="logo logo-img">
+                    <img src="assets/logo.png" alt="">
+                </div> 
+                <div class="rankingTabela">
+
+                    <table class="tabela">
+                        <thead>
+                            <th>Colocação</th>
+                            <th>Nome</th>
+                            <th>Pontuação</th>
+                        </thead>
+                        <tbody id="corpoTabela">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="buttons">
+                    <button type="button" id="voltar">Voltar</button>
+                </div>      
             </div>
 
         </div>
